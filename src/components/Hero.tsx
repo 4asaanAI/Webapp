@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Flower2, CheckCircle, AlertCircle } from 'lucide-react';
+import { School, Eye, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 export default function Hero() {
@@ -58,70 +58,93 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="pt-32 pb-16 sm:pt-40 sm:pb-20 bg-gradient-primary text-white relative overflow-hidden">
-      <div className="absolute top-10 right-10 opacity-10">
-        <Flower2 className="w-32 h-32 sm:w-40 sm:h-40" />
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-16">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.pexels.com/photos/8923119/pexels-photo-8923119.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-blue-900/90 to-slate-800/95"></div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <Flower2 className="w-16 h-16 sm:w-20 sm:h-20 text-accent-500" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-white">
+            <div className="flex items-center gap-3 mb-6">
+              <School className="w-12 h-12 text-orange-400" />
+              <span className="text-xl font-semibold">Primary School</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              An Inspiring<br />
+              <span className="text-orange-400">Primary School</span><br />
+              for your child
+            </h1>
+
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl">
+              A primary school is creative and innovative approaches to education, catering into the next.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                Admit Child
+              </button>
+              <button className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-semibold rounded-lg transition-all flex items-center gap-2">
+                <Eye className="w-5 h-5" />
+                <span>Watch Video</span>
+              </button>
+            </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Unlock the Power of AI for Your Business
-          </h1>
-          <p className="text-lg sm:text-xl text-blue-100 mb-8 leading-relaxed">
-            Learn, integrate, and automate AI workflows tailored to your industry.
-            Start your AI transformation today.
-          </p>
+
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-5 py-4 rounded-lg border-2 border-gray-200 text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500 transition"
+                  disabled={loading}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  placeholder="Company name"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  className="w-full px-5 py-4 rounded-lg border-2 border-gray-200 text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500 transition"
+                  disabled={loading}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full px-5 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+              >
+                {loading ? 'Sending...' : 'Connect with Us'}
+              </button>
+
+              {status === 'success' && (
+                <div className="flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg text-green-800 animate-fade-in">
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-sm">{message}</span>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="flex items-center gap-3 p-3 bg-red-50 border border-red-200 rounded-lg text-red-800 animate-fade-in">
+                  <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-sm">{message}</span>
+                </div>
+              )}
+            </form>
+          </div>
         </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-black placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-accent-500 transition"
-              disabled={loading}
-            />
-          </div>
-
-          <div>
-            <input
-              type="text"
-              placeholder="Company name"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-              className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-black placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-accent-500 transition"
-              disabled={loading}
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? 'Sending...' : 'Connect'}
-          </button>
-
-          {status === 'success' && (
-            <div className="flex items-center gap-3 p-3 bg-green-500 bg-opacity-20 rounded-lg text-white animate-fade-in">
-              <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-sm">{message}</span>
-            </div>
-          )}
-
-          {status === 'error' && (
-            <div className="flex items-center gap-3 p-3 bg-red-500 bg-opacity-20 rounded-lg text-white animate-fade-in">
-              <AlertCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-sm">{message}</span>
-            </div>
-          )}
-        </form>
       </div>
     </section>
   );
