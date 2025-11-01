@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
@@ -8,15 +8,33 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [statusMessage, setStatusMessage] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleEscape);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -25,16 +43,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim()) {
+    if (!name.trim()) {
       setStatus('error');
-      setStatusMessage('Please fill in all required fields');
+      setMessage('Please enter your name');
       setTimeout(() => setStatus('idle'), 3000);
       return;
     }
 
-    if (!validateEmail(formData.email)) {
+    if (!email.trim() || !validateEmail(email)) {
       setStatus('error');
-      setStatusMessage('Please enter a valid email address');
+      setMessage('Please enter a valid email address');
       setTimeout(() => setStatus('idle'), 3000);
       return;
     }
@@ -45,23 +63,26 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     try {
       const { error } = await supabase.from('leads').insert([
         {
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim() || null,
-          message: formData.message.trim() || null,
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim() || null,
+          query: query.trim() || null,
           created_at: new Date().toISOString(),
         },
       ]);
 
       if (error) {
         setStatus('error');
-        setStatusMessage('Failed to submit your request. Please try again.');
+        setMessage('Failed to submit your request. Please try again.');
         console.error('Supabase error:', error);
         setTimeout(() => setStatus('idle'), 3000);
       } else {
         setStatus('success');
-        setStatusMessage('Thank you! We will get in touch soon.');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setMessage('Thank you! We will get in touch soon.');
+        setName('');
+        setEmail('');
+        setPhone('');
+        setQuery('');
         setTimeout(() => {
           setStatus('idle');
           onClose();
@@ -69,7 +90,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       }
     } catch (err) {
       setStatus('error');
-      setStatusMessage('An error occurred. Please try again.');
+      setMessage('An error occurred. Please try again.');
       console.error('Error:', err);
       setTimeout(() => setStatus('idle'), 3000);
     } finally {
@@ -80,60 +101,89 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-md w-full p-6 relative">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition"
-        >
-          <X className="w-6 h-6" />
-        </button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fade-in"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div
+        className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto animate-slide-in"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center rounded-t-xl">
+          <h2 id="modal-title" className="text-2xl font-bold text-dark-900">
+            Get in touch
+          </h2>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 rounded-lg transition"
+            aria-label="Close modal"
+          >
+            <X className="w-6 h-6 text-dark-600" />
+          </button>
+        </div>
 
-        <h2 className="text-2xl font-bold text-dark-900 mb-6">Get in Touch</h2>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
+            <label htmlFor="name" className="block text-sm font-medium text-dark-700 mb-2">
+              Name <span className="text-red-500">*</span>
+            </label>
             <input
+              id="name"
               type="text"
-              placeholder="Name *"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transition"
+              placeholder="Your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-dark-300 text-dark-900 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
               disabled={loading}
               required
             />
           </div>
 
           <div>
+            <label htmlFor="email" className="block text-sm font-medium text-dark-700 mb-2">
+              Email <span className="text-red-500">*</span>
+            </label>
             <input
+              id="email"
               type="email"
-              placeholder="Email *"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transition"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-dark-300 text-dark-900 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
               disabled={loading}
               required
             />
           </div>
 
           <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-dark-700 mb-2">
+              Phone <span className="text-dark-400 text-xs">(optional)</span>
+            </label>
             <input
+              id="phone"
               type="tel"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transition"
+              placeholder="+91 XXXXX XXXXX"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-dark-300 text-dark-900 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
               disabled={loading}
             />
           </div>
 
           <div>
+            <label htmlFor="query" className="block text-sm font-medium text-dark-700 mb-2">
+              Query <span className="text-dark-400 text-xs">(optional)</span>
+            </label>
             <textarea
-              placeholder="Message"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transition resize-none"
+              id="query"
+              placeholder="Tell us about your needs..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               rows={4}
+              className="w-full px-4 py-3 rounded-lg border border-dark-300 text-dark-900 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none"
               disabled={loading}
             />
           </div>
@@ -141,22 +191,22 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Sending...' : 'Submit'}
+            {loading ? 'Submitting...' : 'Submit'}
           </button>
 
           {status === 'success' && (
             <div className="flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg text-green-800 animate-fade-in">
               <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-sm">{statusMessage}</span>
+              <span className="text-sm">{message}</span>
             </div>
           )}
 
           {status === 'error' && (
             <div className="flex items-center gap-3 p-3 bg-red-50 border border-red-200 rounded-lg text-red-800 animate-fade-in">
               <AlertCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-sm">{statusMessage}</span>
+              <span className="text-sm">{message}</span>
             </div>
           )}
         </form>
