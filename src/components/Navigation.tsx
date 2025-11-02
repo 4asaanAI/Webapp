@@ -9,18 +9,27 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'why-choose-us', 'services', 'about-us'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       let currentSection = 'hero';
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
-          const { offsetTop } = element;
-          if (scrollPosition >= offsetTop - 100) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             currentSection = sectionId;
+            break;
           }
         }
+      }
+
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+
+      if (scrollTop + windowHeight >= documentHeight - 100) {
+        currentSection = 'about-us';
       }
 
       setActiveSection(currentSection);
