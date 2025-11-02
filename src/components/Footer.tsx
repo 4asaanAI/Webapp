@@ -27,7 +27,7 @@ export default function Footer() {
 
           <div className="flex gap-3">
             <a
-              href="https://twitter.com"
+              href="https://x.com/4asaanai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark-500 hover:text-primary-500 transition"
@@ -43,7 +43,7 @@ export default function Footer() {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/4asaanai/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark-500 hover:text-primary-500 transition"
@@ -52,7 +52,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/aasaan.ai_?igsh=c2IweHN6d3VjaTh5&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark-500 hover:text-primary-500 transition"
