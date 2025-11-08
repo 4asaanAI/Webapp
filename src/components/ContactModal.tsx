@@ -160,7 +160,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-dark-700 mb-2">
-              Phone <span className="text-dark-400 text-xs">(optional)</span>
+              Phone
             </label>
             <input
               id="phone"
@@ -175,7 +175,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
           <div>
             <label htmlFor="query" className="block text-sm font-medium text-dark-700 mb-2">
-              Query <span className="text-dark-400 text-xs">(optional)</span>
+              Tell us
             </label>
             <textarea
               id="query"
