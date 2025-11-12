@@ -7,12 +7,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <Flower2 className="w-6 h-6 text-accent-500" />
-            <span className="text-base font-semibold text-dark-900">Aasaan AI</span>
+            <span className="text-base font-semibold text-dark-900" style={{ fontFamily: 'Righteous, sans-serif' }}>Aasaann AI</span>
           </div>
 
           <div className="text-center md:text-left">
             <p className="text-xs text-dark-500">
-              © Aasaan AI. All rights reserved
+              © Aasaann AI. All rights reserved
             </p>
           </div>
 
