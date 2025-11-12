@@ -41,6 +41,18 @@ export default function Hero() {
         console.error('Supabase error:', error);
         setTimeout(() => setStatus('idle'), 3000);
       } else {
+        await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-lead-email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: companyName.trim() || 'Not provided',
+            email: email.trim(),
+            source: 'Hero Section',
+          }),
+        }).catch(err => console.error('Email notification error:', err));
+
         setStatus('success');
         setMessage('Thank you! We will get in touch soon.');
         setEmail('');

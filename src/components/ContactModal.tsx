@@ -77,6 +77,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         console.error('Supabase error:', error);
         setTimeout(() => setStatus('idle'), 3000);
       } else {
+        await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-lead-email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: name.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
+            query: query.trim(),
+            source: 'Contact Modal',
+          }),
+        }).catch(err => console.error('Email notification error:', err));
+
         setStatus('success');
         setMessage('Thank you! We will get in touch soon.');
         setName('');
