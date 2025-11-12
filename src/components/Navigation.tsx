@@ -55,7 +55,7 @@ export default function Navigation() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <Flower2 className="w-8 h-8 text-accent-500" />
-              <span className="text-xl font-bold text-primary-600" style={{ fontFamily: 'Righteous, sans-serif' }}>Aasaann AI</span>
+              <span className="text-xl font-bold text-primary-600" style={{ fontFamily: 'Maiandra GD, cursive' }}>Aasaann AI</span>
             </div>
 
             <div className="hidden md:flex items-center gap-8">

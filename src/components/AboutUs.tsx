@@ -28,7 +28,7 @@ export default function AboutUs() {
                 Our Mission
               </h3>
               <p>
-                To make AI aasaan ("easy") for every business. We democratize AI
+                To make AI aasaann ("easy") for every business. We democratize AI
                 adoption by making it understandable, practical, and accessible for
                 SMEs in India.
               </p>
