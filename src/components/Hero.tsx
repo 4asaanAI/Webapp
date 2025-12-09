@@ -73,14 +73,14 @@ export default function Hero() {
   return (
     <section id="hero" className="pt-32 pb-16 sm:pt-40 sm:pb-20 bg-gradient-primary text-white relative overflow-hidden">
       <div className="absolute top-10 right-10 opacity-20">
-        <img className="w-36 h-36 sm:w-60 sm:h-60" src="/public/logo2.png" style={{ filter: "grayscale(100%)" }}/>
+        <img className="w-36 h-36 sm:w-60 sm:h-60" src="/logo2.png" style={{ filter: "grayscale(100%)" }}/>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <div className="flex justify-center">
             
-            <img className="w-20 h-20 sm:w-40 sm:h-40" src="/public/logo2.png"/>
+            <img className="w-20 h-20 sm:w-40 sm:h-40" src="/logo2.png"/>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Unlock the Power of AI for Your Business
