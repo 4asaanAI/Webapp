@@ -73,7 +73,7 @@ export default function Hero() {
   return (
     <section id="hero" className="pt-32 pb-16 sm:pt-40 sm:pb-20 bg-gradient-primary text-white relative overflow-hidden">
       <div className="absolute top-10 right-10 opacity-20">
-        <img className="w-32 h-32 sm:w-40 sm:h-40" src="/public/logo2.png"/>
+        <img className="w-36 h-36 sm:w-80 sm:h-80" src="/public/logo2.png"/>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
