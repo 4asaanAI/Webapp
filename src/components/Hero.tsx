@@ -79,7 +79,7 @@ export default function Hero() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
-            <Flower2 className="w-16 h-16 sm:w-20 sm:h-20 text-accent-500" />
+            
             <img className="w-16 h-16 sm:w-20 sm:h-20" src="/public/logo.png"/>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
