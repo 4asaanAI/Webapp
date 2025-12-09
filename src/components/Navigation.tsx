@@ -55,7 +55,7 @@ export default function Navigation() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <Flower2 className="w-8 h-8 text-accent-500" />
-              <img clasName="w-10 h-10" src="public/logo2.png"/>
+              <img clasName="w-10 h-10" src="public/logo1.png"/>
             </div>
 
             <div className="hidden md:flex items-center gap-8">
