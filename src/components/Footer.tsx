@@ -3,7 +3,7 @@ import { Flower2, Linkedin, Instagram, Mail, X } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-white text-dark-600 py-8 border-t border-gray-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-2 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <img className="w-20 h-20" src="public/logo1.png"/>
