@@ -78,7 +78,7 @@ export default function Hero() {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <div className="flex justify-center mb-2">
+          <div className="flex justify-center">
             
             <img className="w-20 h-20 sm:w-40 sm:h-40" src="/public/logo2.png"/>
           </div>
