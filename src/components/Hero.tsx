@@ -80,7 +80,7 @@ export default function Hero() {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             
-            <img className="w-20 h-20 sm:w-56 sm:h-56" src="/public/logo.png"/>
+            <img className="w-20 h-20 sm:w-56 sm:h-56 text-white" src="/public/logo.png"/>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Unlock the Power of AI for Your Business
