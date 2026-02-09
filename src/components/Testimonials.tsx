@@ -7,7 +7,7 @@ const testimonials = [
     company: 'TechFlow Industries',
     content: 'Layaa AI transformed how our team works. We reduced manual data entry by 70% in just three weeks. The training was smooth and everyone adapted quickly.',
     rating: 5,
-    image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://www.istockphoto.com/photo/smiling-young-woman-professional-in-formal-wear-with-arms-crossed-and-looking-at-gm1483473258-510053706?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=indian+formal+face',
   },
   {
     name: 'Marcus Johnson',
