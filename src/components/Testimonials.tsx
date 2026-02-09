@@ -7,7 +7,7 @@ const testimonials = [
     company: 'TechFlow Industries',
     content: 'Layaa AI transformed how our team works. We reduced manual data entry by 70% in just three weeks. The training was smooth and everyone adapted quickly.',
     rating: 5,
-    image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://www.istockphoto.com/photo/portrait-of-a-handsome-young-businessman-working-in-office-gm1369746033-439448061?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=professional+indian',
   },
   {
     name: 'Rajesh Mehta',
