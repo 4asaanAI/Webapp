@@ -2,36 +2,36 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Chen',
+    name: 'Priya Sharma',
     role: 'Operations Director',
     company: 'TechFlow Industries',
     content: 'Layaa AI transformed how our team works. We reduced manual data entry by 70% in just three weeks. The training was smooth and everyone adapted quickly.',
     rating: 5,
-    image: 'https://www.istockphoto.com/photo/smiling-young-woman-professional-in-formal-wear-with-arms-crossed-and-looking-at-gm1483473258-510053706?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=indian+formal+face',
+    image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400',
   },
   {
-    name: 'Marcus Johnson',
+    name: 'Rajesh Mehta',
     role: 'CEO',
     company: 'Growth Ventures',
     content: 'The consultation process was eye-opening. Layaa identified automation opportunities we never saw coming. ROI within the first month exceeded expectations.',
     rating: 5,
-    image: 'https://images.pexels.com/photos/1181214/pexels-photo-1181214.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.pexels.com/photos/3821517/pexels-photo-3821517.jpeg?auto=compress&cs=tinysrgb&w=400',
   },
   {
-    name: 'Jennifer Martinez',
+    name: 'Anaya Patel',
     role: 'Marketing Manager',
     company: 'Digital Innovators Co',
     content: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI tools for everything from content creation to analytics. Game changer!',
     rating: 5,
-    image: 'https://images.pexels.com/photos/1181692/pexels-photo-1181692.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400',
   },
   {
-    name: 'David Park',
+    name: 'Arjun Singh',
     role: 'Finance Manager',
     company: 'Summit Financial Group',
     content: 'Professional, thorough, and results-driven. Layaa didn\'t just implement solutions—they ensured our team understood and could maintain them independently.',
     rating: 5,
-    image: 'https://images.pexels.com/photos/1181274/pexels-photo-1181274.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.pexels.com/photos/3821517/pexels-photo-3821517.jpeg?auto=compress&cs=tinysrgb&w=400',
   },
 ];
 
