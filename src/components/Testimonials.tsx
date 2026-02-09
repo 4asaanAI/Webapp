@@ -10,7 +10,7 @@ const testimonials = [
     image: '/istockphoto-2158469005-612x612.jpg',
   },
   {
-    name: 'Rajesh Mehta',
+    name: 'Arnav Mehata',
     role: 'CEO',
     company: 'Growth Ventures',
     content: 'The consultation process was eye-opening. Layaa identified automation opportunities we never saw coming. ROI within the first month exceeded expectations.',
