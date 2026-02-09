@@ -14,7 +14,7 @@ function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleScheduleMeeting = () => {
-    window.open('https://calendly.com', '_blank');
+    window.open('https://calendly.com/layaa-ai222/new-meeting');
   };
 
   return (
