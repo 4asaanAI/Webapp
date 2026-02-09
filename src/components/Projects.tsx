@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Salon Website Design',
+    title: 'Website Design',
     description: 'Complete website overhaul for local salon business',
-    image: '/about.PNG',
-    customerName: 'Rajesh Sharma',
-    customerRole: 'Operations Director',
-    customerCompany: 'TechFlow Industries',
-    review: 'Layaa AI transformed how our team works. We reduced manual data entry by 70% in just three weeks.',
+    image: '/screenshot_2026-02-09_at_8.00.53_am.png',
+    customerName: 'Arun Chaturvedi',
+    customerRole: 'Owner Of BrosAndBeyond',
+    customerCompany: 'Hair Saloon',
+    review: 'Layaa AI Made our website, It was really amazing experiance to work with this company. best services till now I had for any website',
   },
   {
     id: 2,
@@ -18,9 +18,9 @@ const projects = [
     description: 'End-to-end enterprise resource planning system for educational institutions',
     image: '/about 2.jpg',
     customerName: 'Anaya Patel',
-    customerRole: 'Marketing Manager',
-    customerCompany: 'Digital Innovators Co',
-    review: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI tools for everything.',
+    customerRole: 'School Principal',
+    customerCompany: 'Heritage Public School',
+    review: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI based ERP for attendance, results, technical analyses of student performance and more',
   },
   {
     id: 3,
