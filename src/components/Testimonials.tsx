@@ -23,7 +23,7 @@ const testimonials = [
     company: 'Digital Innovators Co',
     content: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI tools for everything from content creation to analytics. Game changer!',
     rating: 5,
-    image: '/download.jpeg',
+    image: '/download_(1).jpeg,
   },
   {
     name: 'Arjun Singh',
@@ -31,7 +31,7 @@ const testimonials = [
     company: 'Summit Financial Group',
     content: 'Professional, thorough, and results-driven. Layaa didn\'t just implement solutions—they ensured our team understood and could maintain them independently.',
     rating: 5,
-    image: '/download.jpeg',
+    image: '/javaistan-ai-generated-8945620_1920.jpg',
   },
 ];
 
