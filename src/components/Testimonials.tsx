@@ -23,7 +23,7 @@ const testimonials = [
     company: 'Digital Innovators Co',
     content: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI tools for everything from content creation to analytics. Game changer!',
     rating: 5,
-    image: '/download_(1).jpeg,
+    image: '/download_(1).jpeg',
   },
   {
     name: 'Arjun Singh',
