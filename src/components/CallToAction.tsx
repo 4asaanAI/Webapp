@@ -1,8 +1,9 @@
 interface CallToActionProps {
   onOpenContact: () => void;
+  onScheduleMeeting?: () => void;
 }
 
-export default function CallToAction({ onOpenContact }: CallToActionProps) {
+export default function CallToAction({ onOpenContact, onScheduleMeeting }: CallToActionProps) {
   return (
     <section className="py-16 sm:py-20 bg-dark-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -13,12 +14,20 @@ export default function CallToAction({ onOpenContact }: CallToActionProps) {
           Let's work together to integrate AI into your operations. Start your journey
           from learning to automation, and watch your team become AI-ready.
         </p>
-        <button
-          onClick={onOpenContact}
-          className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition duration-300 transform hover:scale-105"
-        >
-          Automate Today!
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button
+            onClick={onOpenContact}
+            className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition duration-300 transform hover:scale-105"
+          >
+            Automate Today!
+          </button>
+          <button
+            onClick={onScheduleMeeting}
+            className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-white text-accent-500 font-semibold rounded-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 border-2 border-accent-500"
+          >
+            Schedule Meeting
+          </button>
+        </div>
       </div>
     </section>
   );
