@@ -2,12 +2,12 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Priya Sharma',
+    name: 'Rajesh Sharma',
     role: 'Operations Director',
     company: 'TechFlow Industries',
     content: 'Layaa AI transformed how our team works. We reduced manual data entry by 70% in just three weeks. The training was smooth and everyone adapted quickly.',
     rating: 5,
-    image: 'https://www.istockphoto.com/photo/portrait-of-a-handsome-young-businessman-working-in-office-gm1369746033-439448061?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=professional+indian',
+    image: '/home/project/public/istockphoto-2158469005-612x612.jpg',
   },
   {
     name: 'Rajesh Mehta',
