@@ -31,7 +31,7 @@ const testimonials = [
     company: 'Summit Financial Group',
     content: 'Professional, thorough, and results-driven. Layaa didn\'t just implement solutions—they ensured our team understood and could maintain them independently.',
     rating: 5,
-    image: 'https://images.pexels.com/photos/3821517/pexels-photo-3821517.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/download.jpeg',
   },
 ];
 
