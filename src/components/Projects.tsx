@@ -26,7 +26,7 @@ const projects = [
     id: 3,
     title: 'Business Automation Suite',
     description: 'Custom automation tool for streamlining business operations',
-    image: '/istockphoto-2158469005-612x612.jpg',
+    image: '/screenshot_2026-02-09_at_8.11.34_am.png',
     customerName: 'Arjun Singh',
     customerRole: 'Finance Manager',
     customerCompany: 'Summit Financial Group',
