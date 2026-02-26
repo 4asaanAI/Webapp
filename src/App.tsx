@@ -9,12 +9,14 @@ import CallToAction from './components/CallToAction';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
+import MeetingModal from './components/MeetingModal';
 
 function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isMeetingModalOpen, setIsMeetingModalOpen] = useState(false);
 
   const handleScheduleMeeting = () => {
-    window.open('https://calendly.com/layaa-ai222/new-meeting');
+    setIsMeetingModalOpen(true);
   };
 
   return (
@@ -34,6 +36,10 @@ function App() {
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+      />
+      <MeetingModal
+        isOpen={isMeetingModalOpen}
+        onClose={() => setIsMeetingModalOpen(false)}
       />
     </div>
   );

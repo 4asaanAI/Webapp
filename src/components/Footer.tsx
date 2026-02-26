@@ -16,6 +16,9 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
+            <a href="/Layaa_AI_Company_Profile.pdf" target="_blank" rel="noopener noreferrer" className="text-xs text-dark-600 hover:text-primary-500 transition">
+              Company Profile
+            </a>
             <a href="#" className="text-xs text-dark-600 hover:text-primary-500 transition">
               Terms & Condition
             </a>
