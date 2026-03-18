@@ -83,7 +83,7 @@ export default function Hero() {
             <img className="w-20 h-20 sm:w-40 sm:h-40" src="/logo2.png"/>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Unlock the Power of AI for Your Business
+            Empower Decisions, Elevate Profits!
           </h1>
           <p className="text-lg sm:text-xl text-blue-100 mb-8 leading-relaxed">
             Learn, integrate, and automate AI workflows tailored to your industry.
