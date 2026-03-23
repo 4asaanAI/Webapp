@@ -24,9 +24,9 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Business Automation Suite',
-    description: 'Custom automation tool for streamlining business operations',
-    image: '/istockphoto-2158469005-612x612.jpg',
+    title: 'CA Automation Agent',
+    description: 'Automates manual tasks for Chartered Accountants including document processing, compliance, and reporting',
+    image: '/ChatGPT_Image_Mar_23,_2026,_08_31_58_AM.png',
     customerName: 'Arjun Singh',
     customerRole: 'Finance Manager',
     customerCompany: 'Summit Financial Group',
