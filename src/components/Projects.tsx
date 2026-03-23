@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
   {
@@ -7,30 +7,18 @@ const projects = [
     title: 'Website Design',
     description: 'Complete website overhaul for local salon business',
     image: '/screenshot_2026-02-09_at_8.00.53_am.png',
-    customerName: 'Arun Chaturvedi',
-    customerRole: 'Owner Of BrosAndBeyond',
-    customerCompany: 'Hair Saloon',
-    review: 'Layaa AI Made our website, It was really amazing experiance to work with this company. best services till now I had for any website',
   },
   {
     id: 2,
     title: 'School ERP Automation',
     description: 'End-to-end enterprise resource planning system for educational institutions',
     image: '/screenshot_2026-02-09_at_8.11.34_am.png',
-    customerName: 'Anaya Patel',
-    customerRole: 'School Principal',
-    customerCompany: 'Heritage Public School',
-    review: 'The AI education sessions were incredibly valuable. Our team now confidently uses AI based ERP for attendance, results, technical analyses of student performance and more',
   },
   {
     id: 3,
     title: 'CA Automation Agent',
     description: 'Automates manual tasks for Chartered Accountants including document processing, compliance, and reporting',
     image: '/ChatGPT_Image_Mar_23,_2026,_08_31_58_AM.png',
-    customerName: 'Arjun Singh',
-    customerRole: 'Finance Manager',
-    customerCompany: 'Summit Financial Group',
-    review: 'Professional, thorough, and results-driven. Layaa didn\'t just implement solutions—they ensured understanding.',
   },
 ];
 
@@ -97,31 +85,9 @@ export default function Projects() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6">
+                  <p className="text-gray-600 text-sm">
                     {project.description}
                   </p>
-
-                  <div className="border-t pt-6">
-                    <div className="flex gap-1 mb-3">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-4 h-4 fill-accent-500 text-accent-500"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4 leading-relaxed italic">
-                      "{project.review}"
-                    </p>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">
-                        {project.customerName}
-                      </p>
-                      <p className="text-xs text-gray-600">
-                        {project.customerRole} • {project.customerCompany}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}

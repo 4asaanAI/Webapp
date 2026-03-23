@@ -3,7 +3,6 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import WhyChooseUs from './components/WhyChooseUs';
 import Services from './components/Services';
-import Testimonials from './components/Testimonials';
 import Projects from './components/Projects';
 import CallToAction from './components/CallToAction';
 import AboutUs from './components/AboutUs';
@@ -25,7 +24,6 @@ function App() {
       <Hero />
       <WhyChooseUs />
       <Services />
-      <Testimonials />
       <Projects />
       <CallToAction
         onOpenContact={() => setIsContactModalOpen(true)}
