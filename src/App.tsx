@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import WhyChooseUs from './components/WhyChooseUs';
 import Services from './components/Services';
 import Projects from './components/Projects';
+import AffiliatedBy from './components/AffiliatedBy';
 import CallToAction from './components/CallToAction';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
@@ -25,6 +26,7 @@ function App() {
       <WhyChooseUs />
       <Services />
       <Projects />
+      <AffiliatedBy />
       <CallToAction
         onOpenContact={() => setIsContactModalOpen(true)}
         onScheduleMeeting={handleScheduleMeeting}
