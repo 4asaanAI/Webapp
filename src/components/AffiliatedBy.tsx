@@ -25,9 +25,9 @@ export default function AffiliatedBy() {
           {affiliations.map((affiliation, index) => (
             <div
               key={index}
-              className="flex items-center justify-center group"
+              className="flex items-center justify-center"
             >
-              <div className="h-28 hover:scale-110 transition duration-300">
+              <div className="h-28">
                 <img
                   src={affiliation.image}
                   alt={affiliation.alt}
