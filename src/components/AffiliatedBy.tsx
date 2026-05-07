@@ -12,6 +12,10 @@ export default function AffiliatedBy() {
       image: '/microsoftazure.png',
       alt: 'Microsoft Azure',
     },
+    {
+      image: '/Screenshot_2026-05-07_at_12.01.56_PM.png',
+      alt: 'Partner',
+    },
   ];
 
   return (
