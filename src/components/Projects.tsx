@@ -4,9 +4,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Website Design',
-    description: 'Complete website overhaul for local salon business',
-    image: '/screenshot_2026-02-09_at_8.00.53_am.png',
+    title: 'CockRoach',
+    description: 'AI-powered idea generation platform that helps entrepreneurs and innovators discover unique startup opportunities and creative concepts backed by market insights',
+    image: '/Screenshot_2026-05-09_at_2.49.06_PM.png',
   },
   {
     id: 2,
