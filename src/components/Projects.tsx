@@ -10,7 +10,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'School ERP Automation',
+    title: 'Eduflow',
     description: 'End-to-end enterprise resource planning system for educational institutions',
     image: '/screenshot_2026-02-09_at_8.11.34_am.png',
   },
