@@ -14,7 +14,11 @@ export default function AffiliatedBy() {
     },
     {
       image: '/Screenshot_2026-05-07_at_12.01.56_PM.png',
-      alt: 'Partner',
+      alt: 'NVIDIA Inception',
+    },
+    {
+      image: '/Screenshot_2026-05-09_at_3.01.01_PM.png',
+      alt: 'Zoho',
     },
   ];
 
